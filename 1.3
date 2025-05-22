@@ -1,0 +1,25 @@
+start
+
+new year number
+new now number
+set year 1970
+set now TIME
+
+loop date (now > 31557600000)
+    set now now - 31557600000
+    set year year + 1
+end date
+
+log number year
+
+loop v (year > 2000)
+    set year year - 4
+end v
+
+if (year > 1999)
+  log string "Этот год високосный."
+else
+    log string "Этот год НЕ високосный."
+close
+  
+finish
