@@ -1,0 +1,28 @@
+start
+new year number
+new now number
+set year 1970
+set now TIME
+
+loop date (now > 31557600000)
+    set now now - 31557600000
+    set year year + 1
+end date
+
+new day number
+
+loop day (now > 86400000)
+     set now now - 86400000
+     set day day + 1
+end day
+
+new month number
+set month 1
+loop m (day > 30) //месяцы
+     set day day - 30
+     set month month + 1
+end m
+
+log string "год: ">>year>>" месяц: ">>month>>" день: ">>day
+
+finish
